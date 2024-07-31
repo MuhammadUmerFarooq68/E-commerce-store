@@ -3,7 +3,9 @@ const jwt = require('jsonwebtoken');
 const { encryptToken, decryptToken } = require('../Utils/encryption'); 
 const User = require('../models/User');
 const sodium = require('sodium-native');
-const SECRET_KEY = 'jack'; 
+require('dotenv').config()
+
+const SECRET_KEY = process.env.SECRET_KEY; 
 const CHACHA_KEY = Buffer.alloc(sodium.crypto_stream_chacha20_KEYBYTES);
 sodium.randombytes_buf(CHACHA_KEY);
 async function authenticate(email, password) {

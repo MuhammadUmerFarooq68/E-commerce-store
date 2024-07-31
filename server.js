@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const sequelize = require('./config/database');
 const userRoutes = require('./routes/userRoutes');
 const loggerMiddleware = require('./middleware/loggerMiddleware');
+require('./models/associations');
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());

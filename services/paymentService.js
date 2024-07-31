@@ -1,14 +1,13 @@
 require('dotenv').config()
 const stripe = require('stripe')(process.env.STRIP_KEY);
 const  Payment  = require('../models/payment');
-
 // Create a payment intent with Stripe
 const createPaymentIntent = async (amount) => {
     try {
         const paymentIntent = await stripe.paymentIntents.create({
             amount,
             currency: 'usd',
-            // Optional: Add metadata or description here
+            
         });
 
         return {

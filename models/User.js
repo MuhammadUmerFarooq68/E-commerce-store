@@ -1,8 +1,10 @@
+// models/User.js
+
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const bcrypt = require('bcrypt');
 
-const User = sequelize.define('users', {
+const User = sequelize.define('User', {
   firstName: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -53,7 +55,6 @@ const User = sequelize.define('users', {
   },
 });
 
+
+
 module.exports = User;
-
-
-
