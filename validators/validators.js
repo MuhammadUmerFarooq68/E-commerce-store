@@ -1,4 +1,5 @@
 const Joi = require('joi');
+
 const userSchema = Joi.object({
   firstName: Joi.string().trim().min(1).required(),
   lastName: Joi.string().trim().min(1).required(),

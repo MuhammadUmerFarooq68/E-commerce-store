@@ -12,7 +12,6 @@ async function encryptToken(token, key) {
 async function decryptToken(nonceHex, ciphertextHex, key) {
   const nonce = Buffer.from(nonceHex, 'hex');
   const ciphertext = Buffer.from(ciphertextHex, 'hex');
-
   const plaintext = Buffer.alloc(ciphertext.length); 
   crypto_stream_chacha20_xor(plaintext, ciphertext, nonce, key); 
 

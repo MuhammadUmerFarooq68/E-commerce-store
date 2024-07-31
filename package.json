@@ -12,12 +12,13 @@
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "chacha": "^2.1.0",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.10.3",
     "nodemailer": "^6.9.14",
-    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemailer-smtp-transport": "^2.4.2",
     "sequelize": "^6.37.3",
     "sodium-native": "^4.1.1"
   }
