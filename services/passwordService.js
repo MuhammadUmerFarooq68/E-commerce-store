@@ -1,11 +1,10 @@
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
-const transporter = require('../config/email'); // Assuming you've configured nodemailer
+const transporter = require('../config/email'); 
 const User=require('../models/User')
 async function generateOTP(email) {
   try {
     const user = await User.findOne({ where: { email } });
-
     if (!user) {
       throw new Error('User not found');
     }
@@ -28,7 +27,6 @@ async function generateOTP(email) {
         console.log('Email sent: ' + info.response);
       }
     });
-
   } catch (error) {
     throw new Error(error.message); 
   }
