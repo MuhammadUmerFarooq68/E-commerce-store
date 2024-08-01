@@ -7,7 +7,8 @@ const productController = require('../controllers/productController');
 const paymentController = require('../controllers/paymentController');
 const reviewController = require('../controllers/reviewController');
 const { sendSmsController } = require('../controllers/smsController');
-
+const fileController = require('../controllers/fileController');
+const upload = require('../middleware/multerConfig');
 
 router.post('/signup', userController.createUser);
 router.post('/login', authController.login);
@@ -32,5 +33,10 @@ router.delete('/delete/:id', reviewController.deleteReview);
 
 router.post('/send-sms', sendSmsController);
 
+
+
+
+router.post('/upload', upload.single('file'), fileController.uploadFile);
+router.get('/download/:fileName', fileController.downloadFile);
 
 module.exports = router;
