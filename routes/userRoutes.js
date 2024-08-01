@@ -6,6 +6,8 @@ const passwordController = require('../controllers/passwordController');
 const productController = require('../controllers/productController');
 const paymentController = require('../controllers/paymentController');
 const reviewController = require('../controllers/reviewController');
+const { sendSmsController } = require('../controllers/smsController');
+
 
 router.post('/signup', userController.createUser);
 router.post('/login', authController.login);
@@ -27,5 +29,8 @@ router.get('/reviewbyid/:id', reviewController.getReviewById);
 router.post('/createreview', reviewController.createReview);
 router.put('/updatingreviews/:id', reviewController.updateReview);
 router.delete('/delete/:id', reviewController.deleteReview);
+
+router.post('/send-sms', sendSmsController);
+
 
 module.exports = router;
