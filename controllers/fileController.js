@@ -9,13 +9,12 @@ async function uploadFile(req, res) {
     const file = req.file;
     const dest = `uploads/${file.originalname}`;
     const url = await storageService.uploadFile(file.path, dest);
-    fs.unlinkSync(file.path); // Clean up the temporary file
+    fs.unlinkSync(file.path); 
     res.status(200).json({ message: 'File uploaded successfully.', url });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 }
-
 async function downloadFile(req, res) {
   try {
     const { fileName } = req.params;
